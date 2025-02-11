@@ -27,4 +27,4 @@ Navigate to the entry point of the application at `./src/index.tsx` and comment 
 
 Run the application again, and you will notice the launch icon is missing. The console will display the following error message:
 
-![Error Screenshot](./public/error-screenshot.jpg)
+![Error Screenshot](./public/error-screenshot.JPG)
