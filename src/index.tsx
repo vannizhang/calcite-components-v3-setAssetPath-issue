@@ -1,25 +1,19 @@
 import './styles/index.css';
-import '@components/calcite-components';
+import '@esri/calcite-components/dist/components/calcite-button.js';
+import { setAssetPath } from '@esri/calcite-components/dist/components';
+import { CalciteButton } from '@esri/calcite-components-react';
 
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import { Provider as ReduxProvider } from 'react-redux';
 
-import configureAppStore, { getPreloadedState } from './store/configureStore';
-
-import AppContextProvider from './contexts/AppContextProvider';
-import { AppLayout } from '@components/AppLayout/AppLayout';
-
-(async () => {
-    const preloadedState = getPreloadedState();
+(() => {
+    // setAssetPath('https://js.arcgis.com/calcite-components/2.13.2/assets');
 
     const root = createRoot(document.getElementById('root'));
 
     root.render(
-        <ReduxProvider store={configureAppStore(preloadedState)}>
-            <AppContextProvider>
-                <AppLayout />
-            </AppContextProvider>
-        </ReduxProvider>
+        <CalciteButton iconStart="launch">
+            This is a launch button
+        </CalciteButton>
     );
 })();

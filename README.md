@@ -1,19 +1,30 @@
-# React-Redux-ArcGIS Boilerplate
+## Getting Started
 
-## Maintaining `@arcgis/core` and `@esri/calcite-components-react` Dependencies
+Before you start, ensure you have the latest version of [Node.js](https://nodejs.org/en/) and NPM installed. The current Long Term Support (LTS) release is recommended.
 
-### Updating the CSS Link for `@arcgis/core`
+1. Fork this repository and clone your fork to your local machine:
+    ```sh
+    git clone https://github.com/vannizhang/calcite-components-v3-setAssetPath-issue.git
+    ```
 
-When updating `@arcgis/core`, ensure that the main CSS file is updated in `./src/styles/index.css` via the CDN link to reduce the final bundle size.
+2. Navigate to the project's root directory and install the necessary packages:
+    ```sh
+    npm install
+    ```
 
-```css
-@import 'https://js.arcgis.com/4.31/@arcgis/core/assets/esri/themes/dark/main.css';
+3. To run and test the application locally (http://localhost:8080):
+    ```sh
+    npm run start
+    ```
+    This command starts a server instance and listens for connections on port `8080`.
+
+## Issue with `setAssetPath`
+
+Navigate to the entry point of the application at `./src/index.tsx` and comment out the line that sets the asset path:
+```ts
+// setAssetPath('https://js.arcgis.com/calcite-components/2.13.2/assets');
 ```
 
-### Make sure update `Calcite-Components` related assets
+Run the application again, and you will notice the launch icon is missing. The console will display the following error message:
 
-The `./src/components/calcite-components/index.ts` file contains a function call that loads Calcite-related assets from the CDN:
-
-```js
-setAssetPath('https://js.arcgis.com/calcite-components/2.13.2/assets');
-```
+![Error Screenshot](./public/error-screenshot.jpg)
